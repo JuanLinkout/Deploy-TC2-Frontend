@@ -1,0 +1,38 @@
+<mat-card class="home mat-elevation-z3">
+  <div class="card-header">
+    <div>
+      <mat-card-title class="title">Users</mat-card-title>
+      <mat-card-subtitle class="subtitle">Página com todos os usuários cadastrados.</mat-card-subtitle>
+    </div>
+    <div class="add-button">
+      <a routerLink="/user/create">
+        <button mat-fab color="primary">
+          <mat-icon>add</mat-icon>
+        </button>
+      </a>
+    </div>
+  </div>
+  <mat-divider class="divider"></mat-divider>
+  <div class="user-content">
+    <mat-card class="example-card mat-elevation-z4" *ngFor="let user of users" _id={{user._id}}>
+      <mat-card-header>
+        <mat-card-title>{{user.nome}}</mat-card-title>
+        <mat-card-subtitle>Idade: {{user.idade}}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="card-image" mat-card-image src={{user.foto}} alt="Photo of a Shiba Inu">
+      <mat-card-content class="card-content">
+        Descrição para preencher espaço, descrição para preencher espaço, descrição para preencher espaço...
+      </mat-card-content>
+      <mat-card-actions>
+        <a routerLink="/user/details/{{user._id}}">
+          <button mat-raised-button color="primary">
+            <mat-icon class="card-button-icon">mode_edit</mat-icon>Edit
+          </button>
+        </a>
+        <button (click)="deleteUser(user._id)" mat-raised-button color="warn">
+          <mat-icon class="card-button-icon">delete</mat-icon>Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</mat-card>

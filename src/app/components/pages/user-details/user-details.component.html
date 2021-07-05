@@ -1,0 +1,49 @@
+<mat-card class="details mat-elevation-z3">
+    <mat-card-title class="title">User Detail</mat-card-title>
+    <mat-card-subtitle class="subtitle">Página com detalhes do usuário cadastrado.</mat-card-subtitle>
+    <mat-divider class="divider"></mat-divider>
+    <div class="details-content">
+        <div class="user-detail">
+            <img class="user-image" src={{user.foto}} alt="Photo of a Shiba Inu">
+            <mat-card class="user-detail-card mat-elevation-z3">
+                <mat-card-content class="user-form">
+                    <mat-form-field appearance="outline" class="user-form-input">
+                        <mat-label>Nome</mat-label>
+                        <input [(ngModel)]="user.nome" matInput placeholder="Nome">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="user-form-input">
+                        <mat-label>Idade</mat-label>
+                        <input [(ngModel)]="user.idade" type="number" matInput placeholder="Idade">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="user-form-input">
+                        <mat-label>Foto</mat-label>
+                        <input [(ngModel)]="user.foto" matInput placeholder="Foto">
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions class="card-actions">
+                    <button (click)="handleResetInput()" mat-raised-button color="warn">
+                        <mat-icon class="card-button-icon">delete</mat-icon>Clear
+                    </button>
+                    <button (click)="updateUser(user)" mat-raised-button color="primary">
+                        <mat-icon class="card-button-icon">save</mat-icon>Salvar
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+        <div class="user-ficha">
+            <mat-card class="user-detail-card mat-elevation-z3">
+                <mat-card-header class="card-header">
+                    <mat-card-title>Ficha Tecnica user</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card-content">
+                    <p>
+                        Descrição para preencher espaço Descrição para preencher espaço Descrição para preencher espaço
+                        Descrição para preencher espaço Descrição para preencher espaço Descrição para preencher espaço.
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+</mat-card>
